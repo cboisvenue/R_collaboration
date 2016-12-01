@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# trial read Joanne's data\n#\n#Cboisvenue July20th, 2016\n#--------------------------------------\n\nlibrary(data.table)\n\nlinks <- fread(\"G:/RES_Work/Work/StandReconstruction/work/data/whitejoannenrcanrncanrebapproxyvaluesforintens/Boisvenue_plots_link.csv\")\nsetkey(links,UNIQUE)\nlibrary(foreign)\n#data <- read.dbf(\"<Path to your file>\")\nzone14 <- read.dbf(\"G:/RES_Work/Work/StandReconstruction/work/data/whitejoannenrcanrncanrebapproxyvaluesforintensTrial/zone14_BAP_extract.dbf\")\nzone14 <- as.data.table(zone14)\nsetkey(zone14,UNIQUE)\n\ntrial14 <- merge(links,zone14)\ndim(trial14)\n\n\n# complete set\nbap <- fread(\"G:/RES_Work/Work/StandReconstruction/work/data/whitejoannenrcanrncanrebapproxyvaluesforintens/CB_plots_BAP_July292016.csv\")\n",
+    "created" : 1480615585140.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "245200097",
+    "id" : "20F5622F",
+    "lastKnownWriteTime" : 1469829710,
+    "last_content_update" : 1469829710,
+    "path" : "C:/Celine/GitHub/R_collaboration/BAP_readTrial.r",
+    "project_path" : "BAP_readTrial.r",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
