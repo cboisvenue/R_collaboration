@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"dataNotesMethods\"\nauthor: \"CBoisvenue\"\ndate: \"December 6, 2016\"\noutput: pdf_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n# Overview\n\nThis document is to keep track of progress in the analysis of Juha's stand reconstruction (SR) site. There are many databases involved and many potential analyses. The first part will give a brief overview of what I know about the data up to now (heading \"Data\"). After that, the first goal is to see if there is a relationship between NPP (or other measure of productivity) at the DF49 site and climate variables. The second goal will be to see if we can look at NPP estimated at those sites and compare it to NPP from MODIS (do years overlap?).\n\n\n# Data\n\n## MODIS and climate db\n\nBrenton Chookolingo, an undergraduate student from UBC, was hired to explore what remote sensing products were out there that could potentially be used for the stand reconstruction sites. He was also specifically tasked with building a database with climate data, MODIS NPP estimates for 3X3 pixels along with their landclassification around the SR sites. A copy of all his original work is here on w-vic-A105350 \"H:\\Celine_other\\Brenton Chookolingo\" and there is a copy on a portable 1TB drive (the old white one). The final MODIS data base was copied to M:\\Brenton\\, and so was the FetchClimate data base he downloaded. The reason for the FethClimate, is that the MODIS data base only covers 2000-2014 values. SR sites will go furtherback, so climate data will be needed from FetchClim.\n\n```{r echo=FALSE}\nlibrary(data.table)\n\nmodis <- fread(\"M:/Brenton/MODIS Climate Database v11.csv\")\nfetchClim <- fread(\"M:/Brenton/Fetch Climate Canadian Dataset.csv\")\ndim(modis)\nnames(modis)\nelevDiffs <- (modis$`Elevation Juha`-modis$`Elevation NRCAN`)\nhist(elevDiffs)\nstr(fetchClim)\n\n```\n\n\n\n\n",
+    "created" : 1481067585990.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4044259854",
+    "id" : "A2FA044",
+    "lastKnownWriteTime" : 1481071208,
+    "last_content_update" : 1481071245669,
+    "path" : "C:/Celine/GitHub/R_collaboration/analysis1dataSteps.Rmd",
+    "project_path" : "analysis1dataSteps.Rmd",
+    "properties" : {
+        "last_setup_crc32" : "AEB80A78bb338d19",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
